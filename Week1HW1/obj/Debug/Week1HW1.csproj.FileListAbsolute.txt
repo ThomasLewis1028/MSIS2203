@@ -1,0 +1,5 @@
+C:\Users\thoma\RiderProjects\Computer Programming for Business\Week1HW1\bin\Debug\Week1HW1.exe
+C:\Users\thoma\RiderProjects\Computer Programming for Business\Week1HW1\bin\Debug\Week1HW1.pdb
+C:\Users\thoma\RiderProjects\Computer Programming for Business\Week1HW1\obj\Debug\Week1HW1.csprojResolveAssemblyReference.cache
+C:\Users\thoma\RiderProjects\Computer Programming for Business\Week1HW1\obj\Debug\Week1HW1.exe
+C:\Users\thoma\RiderProjects\Computer Programming for Business\Week1HW1\obj\Debug\Week1HW1.pdb
