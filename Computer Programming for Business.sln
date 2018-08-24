@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week1HW1", "Week1HW1\Week1HW1.csproj", "{D1EF5E9B-6F48-4C25-BD51-916EAC8BC0A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inClass823", "..\inClass823\inClass823\inClass823.csproj", "{29DDAAC1-5A8E-4697-814D-C3ACAD6C4482}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D1EF5E9B-6F48-4C25-BD51-916EAC8BC0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1EF5E9B-6F48-4C25-BD51-916EAC8BC0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1EF5E9B-6F48-4C25-BD51-916EAC8BC0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DDAAC1-5A8E-4697-814D-C3ACAD6C4482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DDAAC1-5A8E-4697-814D-C3ACAD6C4482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DDAAC1-5A8E-4697-814D-C3ACAD6C4482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DDAAC1-5A8E-4697-814D-C3ACAD6C4482}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
