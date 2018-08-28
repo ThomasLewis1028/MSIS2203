@@ -7,7 +7,7 @@
 
 using System;
 
-namespace inClass823
+namespace InClass8_23
 {
 	internal class Program
 	{
