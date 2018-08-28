@@ -36,6 +36,9 @@ namespace Week2ICE2
 			
 			//Output the name, the quantity they can get and the beverage name
 			Console.WriteLine(name + " can get " + quantity + " " + beverage + "(s)");
+			
+			//Readline for people using the command prompt instead of an integrated console
+			Console.ReadLine();
 		}
 	}
 }
