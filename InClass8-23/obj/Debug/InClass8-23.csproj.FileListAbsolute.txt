@@ -1,0 +1,6 @@
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\bin\Debug\InClass8_23.exe
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\bin\Debug\InClass8_23.pdb
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8-23.csprojAssemblyReference.cache
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8-23.csproj.CoreCompileInputs.cache
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.exe
+C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.pdb
