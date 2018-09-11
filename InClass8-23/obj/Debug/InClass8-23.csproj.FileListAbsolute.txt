@@ -4,3 +4,14 @@ C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8-23.csprojAs
 C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8-23.csproj.CoreCompileInputs.cache
 C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.exe
 C:\Users\thoma\RiderProjects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.pdb
+D:\projects\MSIS2203\InClass8-23\bin\Debug\InClass8_23.exe
+D:\projects\MSIS2203\InClass8-23\bin\Debug\InClass8_23.pdb
+D:\projects\MSIS2203\InClass8-23\bin\Debug\mscorlib.dll
+D:\projects\MSIS2203\InClass8-23\bin\Debug\normidna.nlp
+D:\projects\MSIS2203\InClass8-23\bin\Debug\normnfc.nlp
+D:\projects\MSIS2203\InClass8-23\bin\Debug\normnfd.nlp
+D:\projects\MSIS2203\InClass8-23\bin\Debug\normnfkc.nlp
+D:\projects\MSIS2203\InClass8-23\bin\Debug\normnfkd.nlp
+D:\projects\MSIS2203\InClass8-23\obj\Debug\InClass8-23.csprojResolveAssemblyReference.cache
+D:\projects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.exe
+D:\projects\MSIS2203\InClass8-23\obj\Debug\InClass8_23.pdb
