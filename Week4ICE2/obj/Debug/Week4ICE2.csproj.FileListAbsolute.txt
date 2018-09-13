@@ -1,0 +1,5 @@
+D:\projects\MSIS2203\Week4ICE2\bin\Debug\Week4ICE2.exe
+D:\projects\MSIS2203\Week4ICE2\bin\Debug\Week4ICE2.pdb
+D:\projects\MSIS2203\Week4ICE2\obj\Debug\Week4ICE2.csprojResolveAssemblyReference.cache
+D:\projects\MSIS2203\Week4ICE2\obj\Debug\Week4ICE2.exe
+D:\projects\MSIS2203\Week4ICE2\obj\Debug\Week4ICE2.pdb
