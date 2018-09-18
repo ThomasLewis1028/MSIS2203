@@ -34,7 +34,7 @@ namespace Week5ICE1
 			}
 
 			//Output City: tempC - tempF 
-			Console.WriteLine("The expected temperatures in will be: ");
+			Console.WriteLine("The expected temperatures will be: ");
 			for (int i = 0; i < 5; i++)
 			{
 				Console.WriteLine(cities[i] + ": " + tempsc[i] + "C - " + tempsf[i] + "F");
