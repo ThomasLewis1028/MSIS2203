@@ -75,7 +75,7 @@ namespace Week3HW
 			if(gpa >= 3)
 				Console.WriteLine(yourname + ", your GPA is " + gpa + ". You qualify for this scholarship!");
 			else
-				Console.WriteLine(yourname + ", your GPA is " + gpa + ". You do n ot qualify for this scholarship.");
+				Console.WriteLine(yourname + ", your GPA is " + gpa + ". You do not qualify for this scholarship.");
 		}
 	}
 }
