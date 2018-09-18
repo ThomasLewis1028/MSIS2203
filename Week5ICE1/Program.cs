@@ -33,11 +33,11 @@ namespace Week5ICE1
 				tempsf[i] = CelcToFahr(tempsc[i] = Convert.ToDouble(Console.ReadLine()));
 			}
 
-			//Output 
-			Console.WriteLine("The expected temperatures in Fahrenheit will be: ");
+			//Output City: tempC - tempF 
+			Console.WriteLine("The expected temperatures in will be: ");
 			for (int i = 0; i < 5; i++)
 			{
-				Console.WriteLine(cities[i] + " - " + tempsc[i] + "C, " + tempsf[i] + "F");
+				Console.WriteLine(cities[i] + ": " + tempsc[i] + "C - " + tempsf[i] + "F");
 			}
 
 		}
