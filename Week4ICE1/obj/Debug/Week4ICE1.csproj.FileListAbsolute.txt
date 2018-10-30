@@ -3,3 +3,9 @@ D:\projects\MSIS2203\Week4ICE1\bin\Debug\Week4ICE1.pdb
 D:\projects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.csprojResolveAssemblyReference.cache
 D:\projects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.exe
 D:\projects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.pdb
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\bin\Debug\Week4ICE1.exe
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\bin\Debug\Week4ICE1.pdb
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.csprojAssemblyReference.cache
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.csproj.CoreCompileInputs.cache
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.exe
+C:\Users\thoma\RiderProjects\MSIS2203\Week4ICE1\obj\Debug\Week4ICE1.pdb
