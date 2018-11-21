@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\thoma\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thoma\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Computer Programming for Business.-814864336.00" t="ExcludeRecursive" />
-    <e p="D:\projects\MSIS2203" t="IncludeFlat">
+    <e p="C:\Users\thoma\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Computer Programming for Business.245887868.00" t="ExcludeRecursive" />
+    <e p="C:\Users\thoma\RiderProjects\MSIS2203" t="IncludeFlat">
       <e p="Computer Programming for Business.sln" t="IncludeFlat" />
       <e p="InClass8-23" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
