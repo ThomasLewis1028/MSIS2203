@@ -1,6 +1,6 @@
+C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\bin\Debug\Week2HW2.exe
+C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\bin\Debug\Week2HW2.pdb
 C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\obj\Debug\Week2HW2.csprojAssemblyReference.cache
 C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\obj\Debug\Week2HW2.csproj.CoreCompileInputs.cache
 C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\obj\Debug\Week2HW2.exe
-C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\bin\Debug\Week2HW2.exe
-C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\bin\Debug\Week2HW2.pdb
 C:\Users\thoma\RiderProjects\MSIS2203\Week2HW2\obj\Debug\Week2HW2.pdb

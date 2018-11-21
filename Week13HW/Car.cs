@@ -1,4 +1,4 @@
-﻿namespace Week13HW
+namespace Week13HW
 {
 	class Car
 	{
@@ -10,5 +10,6 @@
 		public string TagNumber { get; set; }
 
 		public ParkingSpot Spot { get; set; }
+	
 	}
 }

@@ -2,8 +2,6 @@
 {
 	class ParkingSpot
 	{
-		private Car _car;
-
 		public ParkingSpot(ParkingLot lot, int spot)
 		{
 			Lot = lot;
@@ -11,8 +9,14 @@
 		}
 
 		public ParkingLot Lot { get; set; }
-		private int Spot { get; set; }
-		public bool Filled { get; set; }
+
+		public int Spot { get; set; }
+
+		public bool Filled()
+		{
+			return Car != null;
+		}
+
 		public Car Car { get; set; }
 	}
 }

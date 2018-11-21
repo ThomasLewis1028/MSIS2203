@@ -1,6 +1,5 @@
 C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\bin\Debug\Week6HW.exe
 C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\bin\Debug\Week6HW.pdb
-C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\obj\Debug\Week6HW.csprojAssemblyReference.cache
 C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\obj\Debug\Week6HW.csproj.CoreCompileInputs.cache
 C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\obj\Debug\Week6HW.exe
 C:\Users\thoma\RiderProjects\MSIS2203\Week6HW\obj\Debug\Week6HW.pdb
