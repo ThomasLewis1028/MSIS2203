@@ -191,7 +191,7 @@ namespace Week13HW
 				if (fill.Next(0, 100) > 30)
 				{
 					var g = Guid.NewGuid();
-					FillSpot(lot, spot.Spot, new Car(g.ToString().Substring(0, 6)));
+					FillSpot(lot, spot.Spot, new Car(g.ToString().Substring(0, 6).ToUpper()));
 				}
 			}
 		}
