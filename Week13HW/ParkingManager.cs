@@ -28,50 +28,8 @@ namespace Week13HW
 			FillRandom(lots[3]);
 			FillRandom(lots[4]);
 
-			Console.WriteLine();
-
 			Console.WriteLine("Enter your tag number: ");
 			Car myCar = new Car(Console.ReadLine());
-
-			Console.WriteLine("[B]ursar or [C]ard?");
-			switch (Console.ReadLine().ToLower())
-			{
-				case "bursar":
-				case "b":
-					string id;
-					do
-					{
-						Console.WriteLine("Enter Student ID: ");
-						id = Console.ReadLine();
-					} while (!(new Regex("^[a-z|A-Z][0-9]{8}$").IsMatch(id)));
-
-					myCar.StudentID = id;
-					break;
-				case "card":
-				case "c":
-					string cardN, secN;
-					myCar.Card = new Card();
-
-					do
-					{
-						Console.WriteLine("Enter Card Number: ");
-						cardN = Console.ReadLine();
-					} while (!(new Regex("^[0-9]{16}$").IsMatch(cardN)));
-
-					myCar.Card.CardNumber = long.Parse(cardN);
-
-					Console.WriteLine("Enter Name on Card: ");
-					myCar.Card.Name = Console.ReadLine();
-
-					do
-					{
-						Console.WriteLine("Enter Security Number: ");
-						secN = Console.ReadLine();
-					} while (!(new Regex("^[0-9]{3}$").IsMatch(secN)));
-
-					myCar.Card.SecurityNumber = Int32.Parse(secN);
-					break;
-			}
 
 			bool done = false;
 			while (!done)
@@ -81,6 +39,7 @@ namespace Week13HW
 				{
 					case "parking":
 					case "p":
+						SetPaymentType(myCar);
 						var openLots = OpenLots(lots);
 
 						if (!openLots.Any())
@@ -89,6 +48,8 @@ namespace Week13HW
 							done = true;
 							break;
 						}
+						
+						
 
 						Console.WriteLine("Open Lots:");
 						foreach (ParkingLot l in openLots)
@@ -271,6 +232,49 @@ namespace Week13HW
 			{
 				//TODO: Add ability to charge to a real card
 				Console.WriteLine("{0} charged to card ending in {1}", price, car.Card.CardNumber.ToString().Substring(12));
+			}
+		}
+
+		private void SetPaymentType(Car car)
+		{
+			Console.WriteLine("[B]ursar or [C]ard?");
+			switch (Console.ReadLine().ToLower())
+			{
+				case "bursar":
+				case "b":
+					string id;
+					do
+					{
+						Console.WriteLine("Enter Student ID: ");
+						id = Console.ReadLine();
+					} while (!(new Regex("^[a-z|A-Z][0-9]{8}$").IsMatch(id)));
+
+					car.StudentID = id;
+					break;
+				case "card":
+				case "c":
+					string cardN, secN;
+					car.Card = new Card();
+
+					do
+					{
+						Console.WriteLine("Enter Card Number: ");
+						cardN = Console.ReadLine();
+					} while (!(new Regex("^[0-9]{16}$").IsMatch(cardN)));
+
+					car.Card.CardNumber = long.Parse(cardN);
+
+					Console.WriteLine("Enter Name on Card: ");
+					car.Card.Name = Console.ReadLine();
+
+					do
+					{
+						Console.WriteLine("Enter Security Number: ");
+						secN = Console.ReadLine();
+					} while (!(new Regex("^[0-9]{3}$").IsMatch(secN)));
+
+					car.Card.SecurityNumber = Int32.Parse(secN);
+					break;
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Week13HW
@@ -10,8 +9,8 @@ namespace Week13HW
 			Lot = lot;
 		}
 		
-		public string Lot { get; private set; }
+		public string Lot { get;  }
 		
-		public List<ParkingSpot> Spots { get; set; } = new List<ParkingSpot>();
+		public List<ParkingSpot> Spots { get; } = new List<ParkingSpot>();
 	}
 }

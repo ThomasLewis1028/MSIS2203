@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Week13HW
+﻿namespace Week13HW
 {
 	internal class Program
 	{

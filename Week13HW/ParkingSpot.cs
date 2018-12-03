@@ -8,9 +8,9 @@
 			Spot = spot;
 		}
 
-		public ParkingLot Lot { get; set; }
+		public ParkingLot Lot { get; }
 
-		public int Spot { get; set; }
+		public int Spot { get; }
 
 		public bool Filled()
 		{
