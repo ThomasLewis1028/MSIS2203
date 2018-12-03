@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Week13HW
 {
@@ -31,6 +32,46 @@ namespace Week13HW
 
 			Console.WriteLine("Enter your tag number: ");
 			Car myCar = new Car(Console.ReadLine());
+
+			Console.WriteLine("[B]ursar or [C]ard?");
+			switch (Console.ReadLine().ToLower())
+			{
+				case "bursar":
+				case "b":
+					string id;
+					do
+					{
+						Console.WriteLine("Enter Student ID: ");
+						id = Console.ReadLine();
+					} while (!(new Regex("^[a-z|A-Z][0-9]{8}$").IsMatch(id)));
+
+					myCar.StudentID = id;
+					break;
+				case "card":
+				case "c":
+					string cardN, secN;
+					myCar.Card = new Card();
+
+					do
+					{
+						Console.WriteLine("Enter Card Number: ");
+						cardN = Console.ReadLine();
+					} while (!(new Regex("^[0-9]{16}$").IsMatch(cardN)));
+
+					myCar.Card.CardNumber = long.Parse(cardN);
+
+					Console.WriteLine("Enter Name on Card: ");
+					myCar.Card.Name = Console.ReadLine();
+
+					do
+					{
+						Console.WriteLine("Enter Security Number: ");
+						secN = Console.ReadLine();
+					} while (!(new Regex("^[0-9]{3}$").IsMatch(secN)));
+
+					myCar.Card.SecurityNumber = Int32.Parse(secN);
+					break;
+			}
 
 			bool done = false;
 			while (!done)
@@ -83,7 +124,7 @@ namespace Week13HW
 					case "going":
 					case "g":
 						LeaveSpot(myCar);
-
+						ChargeFee(myCar, CalcPrice(myCar.TimeStamp));
 						break;
 					case "exit":
 						done = true;
@@ -130,12 +171,13 @@ namespace Week13HW
 					{
 						FillSpot(lot, spotNum, car);
 						Console.WriteLine("Car with tag {0} parked in {1}:{2}", car.TagNumber, lot.Lot, spot.Spot);
+						car.TimeStamp = DateTime.Now;
 						done = true;
 					}
 				}
 			}
 		}
-		
+
 		public void FillSpot(ParkingLot lot, int n, Car car)
 		{
 			if (n > lot.Spots.Count)
@@ -193,6 +235,42 @@ namespace Week13HW
 					var g = Guid.NewGuid();
 					FillSpot(lot, spot.Spot, new Car(g.ToString().Substring(0, 6).ToUpper()));
 				}
+			}
+		}
+
+		private double CalcPrice(DateTime time)
+		{
+			int total = (DateTime.Now.Date - time.Date).Minutes;
+			double price;
+
+			if (total <= 60)
+			{
+				price = .75;
+			}
+			else if (total <= 120)
+			{
+				price = .75 * total;
+			}
+			else
+			{
+				price = .75 * 120 + total * .5;
+			}
+
+
+			return price;
+		}
+
+		private void ChargeFee(Car car, double price)
+		{
+			if (car.StudentID != null)
+			{
+				//TODO: Add ability to charge to a bursar account
+				Console.WriteLine("{0} charged to account {1}", price, car.StudentID);
+			}
+			else
+			{
+				//TODO: Add ability to charge to a real card
+				Console.WriteLine("{0} charged to card ending in {1}", price, car.Card.CardNumber.ToString().Substring(12));
 			}
 		}
 	}

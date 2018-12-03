@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="Card.cs" />
     <Compile Include="ParkingLot.cs" />
     <Compile Include="ParkingManager.cs" />
     <Compile Include="ParkingSpot.cs" />
