@@ -9,6 +9,7 @@ namespace Week13HW
 	{
 		public void RunManager()
 		{
+			//Set up a few base lots for testing purposes.
 			List<ParkingLot> lots = new List<ParkingLot>();
 			lots.Add(new ParkingLot("A"));
 			lots.Add(new ParkingLot("B"));
@@ -16,20 +17,19 @@ namespace Week13HW
 			lots.Add(new ParkingLot("D"));
 			lots.Add(new ParkingLot("E"));
 
+			//Create spots for each lot of various amounts
 			AddSpots(lots[0], 20);
 			AddSpots(lots[1], 10);
 			AddSpots(lots[2], 38);
 			AddSpots(lots[3], 40);
 			AddSpots(lots[4], 15);
 
+			//Fill 70~% of the lots with various cars.
 			FillRandom(lots[0]);
 			FillRandom(lots[1]);
 			FillRandom(lots[2]);
 			FillRandom(lots[3]);
 			FillRandom(lots[4]);
-
-			Console.WriteLine("Enter your tag number: ");
-			Car myCar = new Car(Console.ReadLine());
 
 			bool done = false;
 			while (!done)
@@ -39,6 +39,9 @@ namespace Week13HW
 				{
 					case "parking":
 					case "p":
+						Console.WriteLine("Enter your tag number: ");
+						Car myCar = new Car(Console.ReadLine());
+
 						SetPaymentType(myCar);
 						var openLots = OpenLots(lots);
 
@@ -48,14 +51,11 @@ namespace Week13HW
 							done = true;
 							break;
 						}
-						
-						
+
 
 						Console.WriteLine("Open Lots:");
 						foreach (ParkingLot l in openLots)
-						{
 							Console.WriteLine("Lot {0}: {1}", l.Lot, OpenCount(l));
-						}
 
 						ParkingLot lot = null;
 						bool done2 = false;
@@ -84,24 +84,25 @@ namespace Week13HW
 						break;
 					case "going":
 					case "g":
-						LeaveSpot(myCar);
-						ChargeFee(myCar, CalcPrice(myCar.TimeStamp));
+						Console.WriteLine("Enter your tag number: ");
+						Car leavingCar = FindCar(lots, Console.ReadLine());
+
+						while (leavingCar == null)
+						{
+							Console.WriteLine("Car not found");
+							Console.WriteLine("Enter your tag number: ");
+							leavingCar = FindCar(lots, Console.ReadLine());
+						}
+						
+						LeaveSpot(leavingCar);
+						ChargeFee(leavingCar, CalcPrice(leavingCar));
 						break;
 					case "exit":
 						done = true;
 						break;
 
 					case "print":
-						foreach (ParkingLot lot2 in lots)
-						{
-							Console.WriteLine("Lot {0}", lot2.Lot);
-							foreach (ParkingSpot spot in lot2.Spots)
-							{
-								Console.WriteLine("\tSpot {0} - {1}", spot.Spot,
-									(spot.Car != null ? spot.Car.TagNumber : null));
-							}
-						}
-
+						PrintCars(lots);
 						break;
 					default:
 						Console.WriteLine("Please follow the format.");
@@ -189,49 +190,72 @@ namespace Week13HW
 		private void FillRandom(ParkingLot lot)
 		{
 			Random fill = new Random();
+			Random minutes = new Random();
+			Random payType = new Random();
+			Random bursar = new Random();
+			Random card = new Random();
+			Random sec = new Random();
+
 			foreach (ParkingSpot spot in lot.Spots)
 			{
 				if (fill.Next(0, 100) > 30)
 				{
 					var g = Guid.NewGuid();
-					FillSpot(lot, spot.Spot, new Car(g.ToString().Substring(0, 6).ToUpper()));
+					var c = new Car(g.ToString().Substring(0, 6).ToUpper());
+					DateTime time = DateTime.Now;
+					time = time.AddMinutes(-minutes.Next(1, 600));
+					c.TimeStamp = time;
+
+					if (payType.Next(0, 100) > 25)
+					{
+						c.BursarAccount = new BursarAccount();
+						c.BursarAccount.CWID = 'A' + bursar.Next(10000000, 99999999).ToString();
+						c.BursarAccount.Name = "Jane Doe";
+					}
+					else
+					{
+						c.Card = new Card();
+						c.Card.CardNumber = card.Next(10000000, 99999999) +
+						                    card.Next(10000000, 99999999);
+						c.Card.SecurityNumber = sec.Next(100, 999);
+						c.Card.Name = "John Doe";
+					}
+
+					FillSpot(lot, spot.Spot, c);
 				}
 			}
 		}
 
-		private double CalcPrice(DateTime time)
+		private double CalcPrice(Car car)
 		{
-			int total = (DateTime.Now.Date - time.Date).Minutes;
+			TimeSpan timeDiff = DateTime.Now.Subtract(car.TimeStamp);
+			double total = Convert.ToInt32(timeDiff.TotalMinutes);
+			
+			Console.WriteLine("Minutes in lot: " + total);
 			double price;
 
 			if (total <= 60)
-			{
 				price = .75;
-			}
 			else if (total <= 120)
-			{
-				price = .75 * total;
-			}
+				price = .75 * (total / 60);
 			else
-			{
-				price = .75 * 120 + total * .5;
-			}
+				price = .75 * 2 + (total / 60 * .5);
 
-
-			return price;
+			return Math.Round(price, 2);
 		}
 
 		private void ChargeFee(Car car, double price)
 		{
-			if (car.StudentID != null)
+			if (car.BursarAccount != null)
 			{
 				//TODO: Add ability to charge to a bursar account
-				Console.WriteLine("{0} charged to account {1}", price, car.StudentID);
+				Console.WriteLine("${0} charged to account {1}", price, car.BursarAccount.CWID);
 			}
 			else
 			{
 				//TODO: Add ability to charge to a real card
-				Console.WriteLine("{0} charged to card ending in {1}", price, car.Card.CardNumber.ToString().Substring(12));
+				Console.WriteLine("${0} charged to card ending in {1}", price,
+					car.Card.CardNumber.ToString().Substring(12));
 			}
 		}
 
@@ -243,13 +267,15 @@ namespace Week13HW
 				case "bursar":
 				case "b":
 					string id;
+					car.BursarAccount = new BursarAccount();
+
 					do
 					{
 						Console.WriteLine("Enter Student ID: ");
 						id = Console.ReadLine();
 					} while (!(new Regex("^[a-z|A-Z][0-9]{8}$").IsMatch(id)));
 
-					car.StudentID = id;
+					car.BursarAccount.CWID = id;
 					break;
 				case "card":
 				case "c":
@@ -276,6 +302,36 @@ namespace Week13HW
 					car.Card.SecurityNumber = Int32.Parse(secN);
 					break;
 			}
+		}
+
+		private void PrintCars(List<ParkingLot> lots)
+		{
+			foreach (ParkingLot lot in lots)
+			{
+				Console.WriteLine("Lot {0}:", lot.Lot);
+				foreach (ParkingSpot spot in lot.Spots)
+				{
+					if (spot.Car != null)
+						Console.WriteLine("\tSpot {0}: {1}", spot.Spot, spot.Car.TagNumber);
+					else
+						Console.WriteLine("\tSpot {0}: empty", spot.Spot);
+				}
+			}
+		}
+
+		private Car FindCar(List<ParkingLot> lots, string tag)
+		{
+			foreach (ParkingLot lot in lots)
+			{
+				foreach (ParkingSpot spot in lot.Spots)
+				{
+					if (spot.Car != null)
+						if (spot.Car.TagNumber.Equals(tag.ToUpper()))
+							return spot.Car;
+				}
+			}
+
+			return null;
 		}
 	}
 }

@@ -7,5 +7,7 @@ namespace Week13HW
 		public long CardNumber { get; set; }
 
 		public int SecurityNumber { get; set; }
+		
+		//TODO: Actually charge a card
 	}
 }

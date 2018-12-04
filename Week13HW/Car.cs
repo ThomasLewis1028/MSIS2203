@@ -15,7 +15,7 @@ namespace Week13HW
 
 		public DateTime TimeStamp { get; set; }
 
-		public string StudentID { get; set; }
+		public BursarAccount BursarAccount { get; set; }
 
 		public Card Card { get; set; }
 	}
